@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Patient Presentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medical Patient Presentation</h1>
+        </header>
+        
+        <main class="three-column-layout">
+            <!-- Left Column: Patient History -->
+            <section class="left-column">
+                <h2>Patient History</h2>
+                
+                <div class="field-group">
+                    <h3>HPI (History of Present Illness)</h3>
+                    <div class="editable-field" data-field="hpi" data-placeholder="Click to add HPI...">
+                        <span class="field-content">Click to add HPI...</span>
+                        <input type="text" class="field-input" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="field-group">
+                    <h3>PMH (Past Medical History)</h3>
+                    <div class="editable-field" data-field="pmh" data-placeholder="Click to add PMH...">
+                        <span class="field-content">Click to add PMH...</span>
+                        <input type="text" class="field-input" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="field-group">
+                    <h3>PSH (Past Surgical History)</h3>
+                    <div class="editable-field" data-field="psh" data-placeholder="Click to add PSH...">
+                        <span class="field-content">Click to add PSH...</span>
+                        <input type="text" class="field-input" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="field-group">
+                    <h3>FH (Family History)</h3>
+                    <div class="editable-field" data-field="fh" data-placeholder="Click to add FH...">
+                        <span class="field-content">Click to add FH...</span>
+                        <input type="text" class="field-input" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="field-group">
+                    <h3>Medications</h3>
+                    <div class="editable-field" data-field="meds" data-placeholder="Click to add medications...">
+                        <span class="field-content">Click to add medications...</span>
+                        <input type="text" class="field-input" style="display: none;">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Middle Column: Vitals, Exam, Orders -->
+            <section class="middle-column">
+                <h2>Clinical Assessment</h2>
+                
+                <div class="field-group">
+                    <h3>Vitals</h3>
+                    <div class="editable-field" data-field="vitals" data-placeholder="Click to add vitals...">
+                        <span class="field-content">Click to add vitals...</span>
+                        <input type="text" class="field-input" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="field-group">
+                    <h3>Physical Exam</h3>
+                    <div class="editable-field" data-field="exam" data-placeholder="Click to add physical exam findings...">
+                        <span class="field-content">Click to add physical exam findings...</span>
+                        <input type="text" class="field-input" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="field-group">
+                    <h3>Labs/Imaging Orders</h3>
+                    <div class="editable-field" data-field="orders" data-placeholder="Click to add labs/imaging orders...">
+                        <span class="field-content">Click to add labs/imaging orders...</span>
+                        <input type="text" class="field-input" style="display: none;">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Right Column: One-Liner and Differential -->
+            <section class="right-column">
+                <h2>Assessment & Plan</h2>
+                
+                <div class="field-group">
+                    <h3>One-Liner</h3>
+                    <div class="editable-field" data-field="oneliner" data-placeholder="Click to add patient one-liner...">
+                        <span class="field-content">Click to add patient one-liner...</span>
+                        <input type="text" class="field-input" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="field-group">
+                    <h3>Differential Diagnosis</h3>
+                    <div class="differential-container">
+                        <div class="add-diagnosis">
+                            <input type="text" id="new-diagnosis" placeholder="Enter new diagnosis...">
+                            <button id="add-diagnosis-btn">Add Diagnosis</button>
+                        </div>
+                        <ul id="diagnosis-list" class="diagnosis-list">
+                            <!-- Diagnoses will be added here dynamically -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
