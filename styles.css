@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.three-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    min-height: 80vh;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e5e9;
+}
+
+section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.field-group {
+    margin-bottom: 25px;
+}
+
+.field-group h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.editable-field {
+    position: relative;
+    min-height: 40px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 12px;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editable-field:hover {
+    border-color: #3498db;
+    background: #ffffff;
+}
+
+.editable-field.editing {
+    border-color: #2ecc71;
+    background: #ffffff;
+}
+
+.field-content {
+    display: block;
+    min-height: 20px;
+    word-wrap: break-word;
+    color: #2c3e50;
+}
+
+.field-content.placeholder {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+.field-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: inherit;
+    font-family: inherit;
+    color: #2c3e50;
+    resize: vertical;
+    min-height: 20px;
+}
+
+/* Differential Diagnosis Specific Styles */
+.differential-container {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.add-diagnosis {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#new-diagnosis {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#new-diagnosis:focus {
+    border-color: #3498db;
+}
+
+#add-diagnosis-btn {
+    padding: 10px 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#add-diagnosis-btn:hover {
+    background: #2980b9;
+}
+
+.diagnosis-list {
+    list-style: none;
+    min-height: 100px;
+}
+
+.diagnosis-item {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.diagnosis-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.diagnosis-item.dragging {
+    opacity: 0.5;
+    transform: rotate(5deg);
+}
+
+.diagnosis-text {
+    flex: 1;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.diagnosis-rank {
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.delete-diagnosis {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-diagnosis:hover {
+    background: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .three-column-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .right-column {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .three-column-layout {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Drag and Drop Visual Feedback */
+.diagnosis-list.drag-over {
+    background: #ecf0f1;
+    border: 2px dashed #3498db;
+    border-radius: 8px;
+}
+
+.drop-indicator {
+    height: 3px;
+    background: #3498db;
+    margin: 2px 0;
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.drop-indicator.visible {
+    opacity: 1;
+}
